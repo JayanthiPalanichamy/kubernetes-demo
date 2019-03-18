@@ -7,15 +7,15 @@ We're going to run our first container on Kubernetes.
 Step 0: Build the Image
 -----------------------
 
-For this exercise, we're going to be using the `hellonode:0.1` image built in exercise 2.
+For this exercise, we're going to be using the `hellonode:0.1` image built.
 
-1. Run `docker image list` and ensure `hellonode:0.1` is present in the list.  If not, return to exercise 2 to build these images.
+1. Run `docker image list` and ensure `hellonode:0.1` is present in the list.  If not, return to sample-app to build these images.
 
 
 Step 0: Ensure Kubernetes is running
 ------------------------------------
 
-1. Run `kubectl cluster-info` and `kubectl version`.  If it errored, return to exercise 0 to ensure you're running Docker Edge, you're in Linux mode, and you've enabled Kubernetes.
+1. Run `kubectl cluster-info` and `kubectl version`.  If it errored, return to exercise 0 to ensure you're running Docker.
 
 
 Step 1: Craft a pod.yaml file
@@ -25,7 +25,7 @@ Step 1: Craft a pod.yaml file
 
 Each Kubernetes object has an `apiVersion`, a `kind`, a `metadata` section, and a `spec` section that holds the details.
 
-1. Create a new file in this `start` directory named `pod.yaml`
+1. Create a new file named `pod.yaml`
 
 2. Write these lines:
 
@@ -137,6 +137,7 @@ Step 2: Schedule the pod
    ```
 
    This command won't end.  It sets up a proxy so you can browse to the pod.  This is generally not a good idea, but we're experimenting.
+   - port-forward is very useful for debugging. But it is visibly slower than connecting to a pod via a service, and sometimes the command just stop after a couple of minutes.
 
 5. Open a browser to [http://localhost:3000/](http://localhost:3000/).  Do you see the site?
 
