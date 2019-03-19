@@ -13,6 +13,12 @@
 - `kubectl create -f https://git.io/vPieo`         # create resource(s) from url
 - `kubectl create deployment nginx --image=nginx`  # start a single instance of nginx
 
+
+### namespaces
+- `kubectl --namespace=<insert-namespace-name-here> run nginx --image=nginx`
+- `kubectl --namespace=<insert-namespace-name-here> get pods`
+- `kubectl get namespaces`
+
 #### Get commands with basic output
 - `kubectl get services`                          # List all services in the namespace
 - `kubectl get pods --all-namespaces`             # List all pods in all namespaces

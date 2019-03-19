@@ -1,17 +1,14 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: ReplicaSet
 metadata:
-  name: hellonode-deployment
+  name: hellonode-replicaset
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: hellonode
   template:
-    # the pod.yaml file ... except:
-    # no apiVersion or kind
     metadata:
-      # no name
       labels:
         app: hellonode
         version: v0.1
@@ -21,3 +18,13 @@ spec:
         image: hellonode:0.1
         ports:
         - containerPort: 3000
+        readinessProbe:
+          tcpSocket:
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 3000
+          initialDelaySeconds: 15
+          periodSeconds: 20

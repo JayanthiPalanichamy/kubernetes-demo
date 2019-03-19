@@ -108,7 +108,7 @@ Step 2: Schedule the service
 
    This command tells us a lot about the service including the `NodePort` that Kubernetes randomly picked.
 
-4. Open a browser to `http://localhost:NODE_PORT/`, replacing `NODE_PORT` with the `NodePort` you found in step 3.  When I ran step 3, I got port `30012` so I'll browse to `http://localhost:30012`.
+4. Open a browser to `http://${minikube-ip}:NODE_PORT/`, replacing `NODE_PORT` with the `NodePort` you found in step 3.  When I ran step 3, I got port `30012` so I'll browse to `http://localhost:30012`.
 
 
 What happened
@@ -116,7 +116,7 @@ What happened
 
 This is how our browser got the results:
 
-1. Browser looks to localhost:30012.
+1. Browser looks to http://${minikube-ip}:30012.
 
 2. Docker-desktop forwards 30012 to the MobyLinuxVM.
 
